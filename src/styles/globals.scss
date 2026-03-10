@@ -1,0 +1,93 @@
+// 1. Налаштування шрифтів (Manrope за макетом)
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+
+// 2. Змінні проєкту (за вашим ТЗ та макетом)
+$white: #ffffff;
+$black: #262626;
+$yellow: #f6b83d;
+$yellow-light: #fff4df;
+$red: #ef2447;
+$blue: #54adff;
+$gray: rgba(38, 38, 38, 0.5);
+
+// Брейкпоінти (за ТЗ)
+$mobile-small: 320px;
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1280px;
+
+$transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+// 3. Скидання стилів (Reset)
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  background-color: #f9f9f9;
+  color: $black;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: $transition;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// 4. Універсальний контейнер (Адаптивність за ТЗ)
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  // Від 320px до 375px — гумова верстка
+  @media (min-width: $mobile-small) {
+    max-width: 100%;
+  }
+
+  // Від 375px — адаптивна
+  @media (min-width: $mobile) {
+    width: 375px;
+  }
+
+  @media (min-width: $tablet) {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 1280px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
