@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import styles from "./Header.module.css"; // або .scss, якщо перейменувала
+import styles from "./Header.module.scss"; // або .scss, якщо перейменувала
 
 export default function Header() {
   return (

@@ -1,0 +1,55 @@
+.header {
+  padding: 20px 0;
+  background-color: transparent; // На головній він на фоні жовтого блоку
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 28px;
+  text-decoration: none;
+  color: #262626;
+
+  span {
+    color: #f6b83d; // Жовте сердечко/літера за макетом
+  }
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+
+  a {
+    text-decoration: none;
+    color: #262626;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover, &.active {
+      border-color: #f6b83d;
+    }
+  }
+}
+
+.loginBtn {
+  background-color: #f6b83d;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e5a930;
+  }
+}
