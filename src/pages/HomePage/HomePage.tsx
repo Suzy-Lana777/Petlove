@@ -5,7 +5,6 @@ export default function HomePage() {
   return (
     <section className={styles.heroSection}>
       <div className="container">
-        
         {/* Жовта картка з текстом (декор, фон) */}
         <div className={styles.heroContent}>
           <div className={styles.textContent}>
@@ -13,7 +12,7 @@ export default function HomePage() {
               Take good care of your <span>small pets</span>
             </h1>
             <p className={styles.description}>
-              Choosing a pet for your home is a choice that is as important as 
+              Choosing a pet for your home is a choice that is as important as
               choosing a family member.
             </p>
           </div>
