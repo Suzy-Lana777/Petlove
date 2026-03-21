@@ -1,55 +1,90 @@
 .header {
-  padding: 20px 0;
-  background-color: transparent; // На головній він на фоні жовтого блоку
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  // Додаємо відступ, щоб елементи не торкалися краю браузера
+  padding: 30px 64px;
+  background: transparent;
+
+  @media screen and (max-width: 1279px) {
+    padding: 20px 32px;
+  }
 }
 
-.navigation {
+.headerWrapper {
   display: flex;
-  align-items: center;
+  align-items: center; // Вирівнює лого, меню і кнопки по одній лінії
   justify-content: space-between;
+  width: 100%;
+  max-width: 1216px; // Обмежуємо ширину згідно з макетом
+  margin: 0 auto;
 }
 
 .logo {
   font-weight: 700;
   font-size: 28px;
+  color: #ffffff;
   text-decoration: none;
-  color: #262626;
+  flex: 0 0 auto; // Лого не розтягується
 
   span {
-    color: #f6b83d; // Жовте сердечко/літера за макетом
+    color: rgba(255, 255, 255, 0.4);
   }
 }
 
-.navLinks {
+.navigation {
+  flex: 1; // Займає вільний простір
   display: flex;
-  gap: 20px;
-  list-style: none;
+  justify-content: center; // Ставить посилання News/Find pet рівно по центру
 
-  a {
-    text-decoration: none;
-    color: #262626;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 30px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+  .navLinks {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-    &:hover, &.active {
-      border-color: #f6b83d;
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      padding: 12px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 30px;
+      transition: all 0.3s ease;
+
+      &:hover,
+      &.active {
+        border-color: #ffffff;
+        background: rgba(255, 255, 255, 0.1);
+      }
     }
   }
 }
 
-.loginBtn {
-  background-color: #f6b83d;
-  color: #ffffff;
-  padding: 12px 30px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: background-color 0.3s ease;
+.auth {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto; // Кнопки не розтягуються
+}
 
-  &:hover {
-    background-color: #e5a930;
-  }
+.loginBtn {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 35px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 30px;
+}
+
+.registerBtn {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #f6b83d;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 30px;
 }

@@ -1,28 +1,30 @@
-// TypeScript більше не сваритиметься, бо імпорт прибрано
+import Header from "../../components/Header/Header";
 import styles from "./Home.module.scss";
 
 export default function HomePage() {
   return (
-    <section className={styles.heroSection}>
-      <div className="container">
-        {/* Жовта картка з текстом (декор, фон) */}
-        <div className={styles.heroContent}>
-          <div className={styles.textContent}>
-            <h1 className={styles.title}>
-              Take good care of your <span>small pets</span>
-            </h1>
-            <p className={styles.description}>
-              Choosing a pet for your home is a choice that is as important as
-              choosing a family member.
-            </p>
-          </div>
-        </div>
+    // Оновлена структура для накладання
+    <div className={styles.pageContainer}>
+      <Header />
 
-        {/* Блок із ФОНОВИМ зображенням */}
-        <div className={styles.heroBackgroundBlock}>
-          {/* Він порожній, бо картинка задається в CSS */}
+      <section className={styles.heroSection}>
+        <div className="container">
+          <div className={styles.heroContent}>
+            {/* Додаємо обгортку для тексту, щоб на десктопі спрацював Flexbox */}
+            <div className={styles.textContent}>
+              <h1 className={styles.title}>
+                Take good <span>care</span> of your small pets
+              </h1>
+              <p className={styles.description}>
+                Choosing a pet for your home is a choice that is meant to enrich
+                your life with immeasurable joy and tenderness.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.heroBackgroundBlock}></div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
