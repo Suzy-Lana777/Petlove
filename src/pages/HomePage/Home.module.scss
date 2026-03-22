@@ -1,34 +1,130 @@
-.heroSection {
+// .heroSection {
+//   position: relative;
+//   padding-top: 0;
+// }
+
+// .heroContent {
+//   background-color: #f6b83d;
+//   border-radius: 60px; // Велике заокруглення для десктопа
+//   max-width: 1216px;
+//   width: 100%;
+//   height: 384px; // Фіксована висота десктопного Hero
+//   padding: 160px 64px 32px; // Великий відступ зверху під Хедер
+//   margin: 0 auto;
+//   color: #ffffff;
+// }
+
+// .textContent {
+//   display: flex;
+//   flex-direction: row; // Текст у рядок
+//   align-items: flex-start;
+//   justify-content: space-between; // Розносимо по краях
+// }
+
+// .title {
+//   font-weight: 700;
+//   font-size: 90px; // Великий шрифт для десктопа
+//   line-height: 1;
+//   letter-spacing: -0.03em;
+//   width: 760px; // Обмежуємо ширину заголовка
+//   margin: 0;
+//   color: #ffffff;
+
+//   span {
+//     color: rgba(255, 255, 255, 0.4);
+//   }
+// }
+
+// .description {
+//   font-weight: 500;
+//   font-size: 18px;
+//   line-height: 1.2;
+//   letter-spacing: -0.02em;
+//   width: 255px; // Вузька колонка опису справа
+//   padding-top: 86px; // Опускаємо текст на рівень другого рядка заголовка
+//   color: #ffffff;
+// }
+
+// .heroBackgroundBlock {
+//   max-width: 1216px;
+//   width: 100%;
+//   height: 580px; // Велика картинка для десктопа за макетом
+//   border-radius: 60px;
+//   margin: 0 auto;
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-image: url("/src/assets/images/home-pet-desk.webp");
+// }
+
+/* Home.module.scss */
+.pageWrapper {
   position: relative;
-  padding-top: 0;
+  width: 100%;
 }
 
+.heroSection {
+  // Щоб хедер міг накластися поверх, жовтий блок повинен бути під ним
+  padding: 0;
+}
+
+/* ЖОВТИЙ БЛОК (Hero Content) */
 .heroContent {
   background-color: #f6b83d;
-  border-radius: 60px; // Велике заокруглення для десктопа
-  max-width: 1216px;
-  width: 100%;
-  height: 384px; // Фіксована висота десктопного Hero
-  padding: 160px 64px 32px; // Великий відступ зверху під Хедер
-  margin: 0 auto 20px;
   color: #ffffff;
+  border-radius: 30px;
+  width: 100%;
+  margin: 0 auto;
+
+  // Mobile (Mobile First)
+  max-width: 335px;
+  height: 390px;
+  // Великий відступ зверху, щоб текст не заважав хедеру
+  padding: 120px 20px 20px;
+
+  @media screen and (min-width: 768px) {
+    border-radius: 60px;
+    max-width: 704px;
+    height: 496px;
+    padding: 160px 40px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1216px;
+    height: 384px;
+    padding: 180px 64px 32px;
+    margin-bottom: 20px; // Відступ між жовтим і картинкою
+  }
 }
 
 .textContent {
   display: flex;
-  flex-direction: row; // Текст у рядок
-  align-items: flex-start;
-  justify-content: space-between; // Розносимо по краях
+  flex-direction: column;
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }
 
 .title {
   font-weight: 700;
-  font-size: 90px; // Великий шрифт для десктопа
-  line-height: 1;
+  font-size: 44px;
+  line-height: 0.95;
   letter-spacing: -0.03em;
-  width: 760px; // Обмежуємо ширину заголовка
-  margin: 0;
   color: #ffffff;
+  max-width: 295px; // Обмежуємо ширину на мобілці
+
+  @media screen and (min-width: 768px) {
+    font-size: 80px;
+    max-width: 550px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 90px;
+    max-width: 760px;
+    margin: 0;
+  }
 
   span {
     color: rgba(255, 255, 255, 0.4);
@@ -36,23 +132,49 @@
 }
 
 .description {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  width: 255px; // Вузька колонка опису справа
-  padding-top: 86px; // Опускаємо текст на рівень другого рядка заголовка
+  font-size: 14px;
+  line-height: 1.28;
   color: #ffffff;
+  max-width: 255px;
+  margin-top: 24px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    margin-left: auto; // На планшеті притискаємо опис вправо
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin: 0;
+    padding-bottom: 20px;
+  }
 }
 
+/* БЛОК З КАРТИНКОЮ (Собака і дівчина) */
 .heroBackgroundBlock {
-  max-width: 1216px;
   width: 100%;
-  height: 580px; // Велика картинка для десктопа за макетом
-  border-radius: 60px;
-  margin: 0 auto;
+  margin: 10px auto 0;
+  border-radius: 30px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("/src/assets/images/home-pet-desk.webp");
+
+  // Mobile First - Картинка для мобілки
+  max-width: 335px;
+  height: 402px;
+  // Використовуємо прямий шлях до Vite
+  background-image: url("/src/assets/images/home-pet-mob.webp");
+
+  @media screen and (min-width: 768px) {
+    border-radius: 60px;
+    max-width: 704px;
+    height: 496px;
+    background-image: url("/src/assets/images/home-pet-tab.webp");
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1216px;
+    height: 580px;
+    margin-top: 0;
+    background-image: url("/src/assets/images/home-pet-desk.webp");
+  }
 }
