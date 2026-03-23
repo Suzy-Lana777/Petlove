@@ -1,227 +1,133 @@
-// .header {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   z-index: 999;
-//   // Додаємо відступ, щоб елементи не торкалися краю браузера
-//   padding: 30px 64px;
-//   background: transparent;
-
-//   @media screen and (max-width: 1279px) {
-//     padding: 20px 32px;
-//   }
-// }
-
-// .headerWrapper {
-//   display: flex;
-//   align-items: center; // Вирівнює лого, меню і кнопки по одній лінії
-//   justify-content: space-between;
-//   width: 100%;
-//   max-width: 1216px; // Обмежуємо ширину згідно з макетом
-//   margin: 0 auto;
-// }
-
-// .logo {
-//   font-weight: 700;
-//   font-size: 28px;
-//   color: #ffffff;
-//   text-decoration: none;
-//   flex: 0 0 auto; // Лого не розтягується
-
-//   span {
-//     color: rgba(255, 255, 255, 0.4);
-//   }
-// }
-
-// .navigation {
-//   flex: 1; // Займає вільний простір
-//   display: flex;
-//   justify-content: center; // Ставить посилання News/Find pet рівно по центру
-
-//   .navLinks {
-//     display: flex;
-//     gap: 10px;
-//     list-style: none;
-//     margin: 0;
-//     padding: 0;
-
-//     a {
-//       text-decoration: none;
-//       color: #ffffff;
-//       font-size: 16px;
-//       padding: 12px 20px;
-//       border: 1px solid rgba(255, 255, 255, 0.4);
-//       border-radius: 30px;
-//       transition: all 0.3s ease;
-
-//       &:hover,
-//       &.active {
-//         border-color: #ffffff;
-//         background: rgba(255, 255, 255, 0.1);
-//       }
-//     }
-//   }
-// }
-
-// .auth {
-//   display: flex;
-//   align-items: center;
-//   gap: 12px;
-//   flex: 0 0 auto; // Кнопки не розтягуються
-// }
-
-// .loginBtn {
-//   text-decoration: none;
-//   color: #ffffff;
-//   font-weight: 700;
-//   padding: 12px 35px;
-//   border: 1px solid rgba(255, 255, 255, 0.4);
-//   border-radius: 30px;
-// }
-
-// .registerBtn {
-//   text-decoration: none;
-//   background-color: #ffffff;
-//   color: #f6b83d;
-//   font-weight: 700;
-//   padding: 12px 20px;
-//   border-radius: 30px;
-// }
-
 /* Header.module.scss */
+
 .header {
-  // Робимо хедер прозорим і накладаємо його поверх жовтого блоку
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  background-color: transparent; // Прозорий фон
+  background-color: transparent;
+  padding-top: 27px;
 
-  // Адаптивні відступи зверху
-  padding: 20px 20px;
-  @media screen and (min-width: 768px) {
-    padding: 24px 32px;
-  }
-  @media screen and (min-width: 1280px) {
-    padding: 30px 64px;
+  @media screen and (max-width: 1279px) {
+    padding-top: 20px;
   }
 }
 
 .headerWrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between; // Лого зліва, кнопки справа
-  width: 100%;
-  max-width: 1216px;
   margin: 0 auto;
+
+  width: 100%;
+  max-width: 1344px;
+  padding: 0 64px;
+
+  @media screen and (max-width: 1279px) {
+    padding: 0 32px;
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 0 20px;
+  }
 }
 
 .logo {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 28px;
   color: #ffffff;
   text-decoration: none;
-  z-index: 1001;
-  @media screen and (min-width: 768px) {
-    font-size: 28px;
-  }
+  flex-shrink: 0;
+  padding-left: 64px;
   span {
     color: rgba(255, 255, 255, 0.4);
   }
+
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
+  }
 }
 
-/* NAVIGATION (Тільки десктоп) */
 .navigation {
-  display: none; // Сховано на мобілці/планшеті
-  @media screen and (min-width: 1280px) {
+  display: flex;
+  margin-left: 280px;
+
+  @media screen and (max-width: 1279px) {
+    display: none; // Бургер для планшетів/мобілок
+  }
+
+  .navLinks {
     display: flex;
-    justify-content: center;
-    flex: 1;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-    .navLinks {
-      display: flex;
-      gap: 10px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 12px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 30px;
+      white-space: nowrap;
+      transition: all 0.3s ease;
 
-      a {
-        text-decoration: none;
-        color: #ffffff;
-        font-weight: 500;
-        padding: 12px 20px;
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        border-radius: 30px;
-        font-size: 14px;
-        transition: border-color 0.3s ease;
-        &.active {
-          border-color: #ffffff;
-        }
+      &:hover,
+      &.active {
+        border-color: #ffffff;
+        background: rgba(255, 255, 255, 0.1);
       }
     }
   }
 }
 
-/* КНОПКИ ТА БУРГЕР */
 .controls {
+  margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
+/* Кнопки авторизації */
 .auth {
-  display: none; // Сховано на мобілці
-  @media screen and (min-width: 768px) {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
+  padding-right: 64px;
+
+  @media screen and (max-width: 767px) {
+    display: none;
   }
 }
 
 .loginBtn {
   text-decoration: none;
   color: #ffffff;
+  font-weight: 700;
   padding: 12px 35px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 30px;
-  font-weight: 700;
-  font-size: 16px;
+  white-space: nowrap;
 }
 
 .registerBtn {
   text-decoration: none;
   background-color: #ffffff;
   color: #f6b83d;
+  font-weight: 700;
   padding: 12px 20px;
   border-radius: 30px;
-  font-weight: 700;
-  font-size: 16px;
+  white-space: nowrap;
 }
 
-/* БУРГЕР-КНОПКА (Мобілка + Планшет) */
+/* Бургер (стилі без змін) */
 .burgerBtn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
-  z-index: 1001;
-  display: flex; // Показуємо на мобілці
-
   @media screen and (min-width: 1280px) {
     display: none;
-  } // Ховаємо на десктопі
-
-  svg {
-    stroke: #ffffff;
-    width: 32px;
-    height: 32px;
   }
-}
-
-.line {
-  stroke-width: 3;
-  stroke-linecap: round;
-  transition: all 0.3s ease;
-  transform-origin: center;
 }
